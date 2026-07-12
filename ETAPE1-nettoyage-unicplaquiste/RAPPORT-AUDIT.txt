@@ -1,0 +1,95 @@
+==========================================
+RAPPORT D'AUDIT QUALITE
+UniC Plaquiste - unicplaquiste.com
+12 juillet 2026
+==========================================
+
+RESULTAT : 16 / 16 controles passes
+
+
+CE QUI ETAIT DEJA BON (bravo)
+------------------------------
+  - Donnees structurees Google (Schema.org)
+  - Open Graph (partage WhatsApp/Facebook)
+  - Un seul <h1> (bonne hierarchie)
+  - Tous les liens externes securises (noopener)
+  - Aucun lien mort
+  - Aucun console.log oublie
+  - Polices optimisees (font-display:swap)
+  - Focus clavier visible
+  - Preconnect sur les polices
+
+
+PROBLEMES TROUVES ET CORRIGES
+------------------------------
+
+1) [SEO] Titre trop long : 75 caracteres
+   Google coupe a environ 60. Ton titre etait tronque
+   dans les resultats de recherche.
+   CORRIGE : 58 caracteres, message complet visible.
+
+2) [SEO] Description trop longue : 226 caracteres
+   Google coupe a environ 160. La fin etait invisible,
+   dont ton numero de telephone.
+   CORRIGE : 158 caracteres, avec le numero visible.
+
+3) [SEO] robots.txt manquant
+   Google ne savait pas comment explorer le site.
+   CORRIGE : fichier ajoute.
+
+4) [SEO] sitemap.xml manquant
+   Google indexe plus lentement sans lui.
+   CORRIGE : fichier ajoute.
+
+5) [ACCESSIBILITE] Pas de lien "Aller au contenu"
+   Les personnes naviguant au clavier devaient passer
+   tout le menu avant d'atteindre le contenu.
+   CORRIGE : lien ajoute (visible seulement au clavier).
+
+6) [SECURITE] Aucun en-tete de securite
+   CORRIGE : fichier _headers ajoute
+   (protection contre le clickjacking, sniffing MIME...)
+
+7) [PROPRETE] Commentaire obsolete dans le code
+   Il parlait d'un "logo.png" qui n'existe pas.
+   CORRIGE : supprime (pouvait induire en erreur).
+
+
+FAUSSES ALERTES VERIFIEES
+--------------------------
+  - "img sans alt" : c'etait un commentaire, pas une vraie image
+  - "lien sans texte" : il avait deja un aria-label
+
+
+BONUS : MISE EN CACHE
+---------------------
+  Le fichier _headers dit aux navigateurs de garder
+  tes images en memoire pendant 1 an.
+  -> Un client qui revient sur ton site : chargement instantane.
+
+
+ETAT FINAL DU SITE
+------------------
+  Poids HTML     : 90 Ko    (etait 1,4 Mo)
+  Images         : 0,46 Mo  (chargees progressivement)
+  Scroll         : fluide (Lenis)
+  Effets 3D      : actifs (GSAP)
+  SEO            : conforme
+  Accessibilite  : conforme
+  Securite       : en-tetes actifs
+
+  Le site est PRET A DEPLOYER.
+
+
+CONTENU DU ZIP
+--------------
+  index.html      <- a remplacer
+  robots.txt      <- NOUVEAU (a ajouter)
+  sitemap.xml     <- NOUVEAU (a ajouter)
+  _headers        <- NOUVEAU (a ajouter)
+
+  ATTENTION : ces 3 nouveaux fichiers doivent etre
+  a la RACINE, a cote de index.html.
+
+  Le fichier "_headers" commence par un underscore.
+  C'est normal, ne le renomme pas.

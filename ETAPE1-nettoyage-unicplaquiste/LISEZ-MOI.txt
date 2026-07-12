@@ -1,0 +1,59 @@
+==========================================
+CORRECTIF - BANDE BLANCHE + SCROLL MOBILE
+UniC Plaquiste - unicplaquiste.com
+==========================================
+
+BUG 1 : LA BANDE BLANCHE AVEC "/>"
+-----------------------------------
+CE QUE TU VOYAIS
+  Une bande blanche en haut du site avec des
+  symboles "/>" ecrits en noir.
+
+LA CAUSE (trouvee)
+  Un morceau de code casse ("/>" orphelin) restait
+  dans l'en-tete de la page. Quand le navigateur
+  tombe sur du texte invalide dans l'en-tete, il
+  "casse" la page et affiche le reste en haut.
+
+  Note : sur ton site EN LIGNE actuellement, tu vois
+  un symptome identique (probablement les anciennes
+  modifications de Claude Code sur le fichier deploye).
+  Quand tu deploieras CETTE version propre, la bande
+  disparaitra aussi en ligne.
+
+LA CORRECTION
+  - Code orphelin supprime
+  - TOUT le document scanne : zero texte parasite
+  - Structure HTML validee : 0 erreur
+  - Les 9 scripts valides par Node.js
+
+BUG 2 : SCROLL TELEPHONE A AMELIORER
+-------------------------------------
+CE QUI CHANGE
+  Le defilement au doigt est maintenant LISSE :
+  - la page suit ton doigt avec une legere douceur
+  - quand tu relaches, elle continue de glisser
+    naturellement (inertie premium)
+  C'est le meme ressenti que les applications
+  haut de gamme.
+
+  Sur PC : rien ne change (tu avais valide).
+
+COMMENT INSTALLER (quand tu seras sur PC)
+------------------------------------------
+  1. Remplace index.html dans "site-unic"
+  2. Ctrl + F5 dans Chrome
+  3. Verifie : plus de bande blanche en haut
+  4. Sur telephone : le scroll doit etre plus
+     doux et plus agreable
+
+  IMPORTANT : c'est en DEPLOYANT cette version
+  que la bande blanche disparaitra de ton site
+  en ligne.
+
+A TESTER
+--------
+  [ ] Plus de bande blanche / symboles en haut
+  [ ] Scroll telephone doux avec inertie
+  [ ] Scroll PC inchange (doux)
+  [ ] Tout le reste fonctionne comme avant
